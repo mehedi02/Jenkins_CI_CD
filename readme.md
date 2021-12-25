@@ -38,7 +38,7 @@ docker-compose up
     3. For Dockerhub, use Secret Text as Kind, and docker-pwd as id and dockerhub token value as secret text
     4. For connecting jenkins to local minikube cluster, we need to upload minikube config file in jenkins
         1. minikube config file is located in .kube folder in home directory.
-            a. To navigate to home directory in linux run ```bash cd ~```
+            a. To navigate to home directory in linux run ```cd ~```
 
             b. For windows, it is in C:\Users\username
 
@@ -49,7 +49,7 @@ docker-compose up
             ![certificate-authority](photo/minikube_certificate_authority.png)
             we need to convert **certificate-authority: /home/mehedi/.minikube/ca.crt**
             a. First run and copy the output
-                ```bash cat /home/mehedi/.minikube/ca.crt | base64 -w 0; echo```
+                ```cat /home/mehedi/.minikube/ca.crt | base64 -w 0; echo```
             b. change certificate-authority to **certificate-authority-data** and
                 replace **/home/mehedi/.minikube/ca.crt** to output of the above command
                 ![modified_ca_auth_data](photo/ca_auth_data.png)
@@ -59,8 +59,8 @@ docker-compose up
                 ![minikube_client](photo/minikube_client.png)
 
                 run the below command and copy the output and add to client-certificate-data and client-key-data
-                 ```bash cat /home/mehedi/.minikube/profiles/minikube/client.crt | base64 -w 0; echo```
-                 ```bash cat /home/mehedi/.minikube/profiles/minikube/client.key | base64 -w 0; echo```
+                 ```cat /home/mehedi/.minikube/profiles/minikube/client.crt | base64 -w 0; echo```
+                 ```cat /home/mehedi/.minikube/profiles/minikube/client.key | base64 -w 0; echo```
             d. after modifying client-certificate-data and client-key-data look like below
             ![modify_minikube_client](photo/minikube_client-data.png)
 
@@ -81,7 +81,7 @@ After saving the pipeline, you will find **Buid Now** option. click it and the p
 
 
 
-6. get nginx url to access app1 and app2
+11. get nginx url to access app1 and app2
 ```bash
 minikube service --url nginx
 ```
