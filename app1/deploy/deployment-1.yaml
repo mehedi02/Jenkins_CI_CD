@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel1
+  labels:
+    app: laravel1
+spec:
+  selector:
+     matchLabels:
+       app: laravel1
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: laravel1
+    spec:
+      containers:
+        - image: mehedi02/laravel-k8s-demo:latest
+          imagePullPolicy: Always
+          name: laravel1
+          ports:
+            - containerPort: 80
+          env:
+          - name: APP_KEY
+            valueFrom:
+              configMapKeyRef:
+                name: laravel-demo
+                key: app_key
