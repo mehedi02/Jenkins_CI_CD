@@ -39,8 +39,9 @@ docker-compose up
     4. For connecting jenkins to local minikube cluster, we need to upload minikube config file in jenkins
         1. minikube config file is located in .kube folder in home directory.
             a. To navigate to home directory in linux run ```bash cd ~```
-            b. For windows, it is in C:\Users\<username>\
+            b. For windows, it is in C:\Users\\<username>\
             c. In the home directory, there is .kube folder. inside .kube folder there is config file
+        
         2. we need to modify the config file to work with jenkins
             this is our initial file look like:
             ![certificate-authority](photo/minikube_certificate_authority.png)
