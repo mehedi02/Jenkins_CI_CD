@@ -21,7 +21,7 @@ docker-compose up
 ```
 6. Jenkins installation
     1. visit localhost:8080
-    2. For the first time, you need to give admin password for the first time.
+    2. For the first time, you need to give admin password.
     3. To find the password look into terminal where you run `docker-compose up`.
     4. Click `install suggested plugins`
     5. In new prompt provide username, password, full name, email
