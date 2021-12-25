@@ -58,7 +58,7 @@ docker-compose up
                 our initial file looks like
                 ![minikube_client](photo/minikube_client.png)
 
-                run the below command and copy the output and add to client-certificate-data and client-key-data
+            run the below command and copy the output and add to client-certificate-data and client-key-data
                  ```cat /home/mehedi/.minikube/profiles/minikube/client.crt | base64 -w 0; echo```
                  ```cat /home/mehedi/.minikube/profiles/minikube/client.key | base64 -w 0; echo```
             d. after modifying client-certificate-data and client-key-data look like below
